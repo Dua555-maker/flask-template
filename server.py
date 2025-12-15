@@ -30,3 +30,9 @@ def favorite_sports():
 def greeting(username):
     title = 'Welcome Page'
     return render_template('welcome.html',title=title,username=username)
+
+@app.route('/favorite/movies')
+def favorite_movies():
+    title = 'Favorite Movies Page'
+    movies = ['13 ชม. ทหารลับแห่งเบนกาซี','ยุทธการดับจอมอหังการ์อินทรีเหล็ก','พยัคฆ์ร้าย ศูนย์ ศูนย์ ก๊าก สายลับกลับมาป่วน','วีรบุรุษสมรภูมิปาฏิหาริย์','วันปฐพีเดือด']
+    return render_template('fav_movies.html',title=title,movies=movies)
