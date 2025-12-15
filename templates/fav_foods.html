@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block title %}
+  {{title}}
+{% endblock %}
+
+{% block content %}
+<h2>My Favorite Foods</h2>
+  <!-- <h3>1. {{ foods[0] }}</h3>
+  <h3>2. {{ foods[1] }}</h3>
+  <h3>3. {{ foods[2] }}</h3>
+  <h3>4. {{ foods[3] }}</h3> -->
+  <ol>
+    {%for food in foods%}
+    <li><h3>{{food}}</h3></li>
+    {%endfor%}
+  </ol>
+{% endblock %}

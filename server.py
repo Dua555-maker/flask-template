@@ -1,0 +1,32 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html',title='My Home Page')
+
+@app.route('/about')
+def about():
+    title='About Page'
+    name='Sirawit Suwakai'
+    email='zxzxdua@gmail.com'
+    phone='0981546575'
+    return render_template('about.html',title=title,name=name,email=email,phone=phone)
+
+@app.route('/favorite/foods')
+def favorite_foods():
+    title = 'Favorite Foods Page'
+    foods = ['ผัดผัก','กะเพราหมูกรอบ','ไก่ย่าง','ไข่เจียวหมูสับ','หมูทอดกระเทียมพริกไทย','ผัดเปรี้ยวหวาน']
+    return render_template('fav_foods.html',title=title,foods=foods)
+
+@app.route('/favorite/sports')
+def favorite_sports():
+    title = 'Favorite Sports Page'
+    sports = ['เปตอง','ปิงปอง','ฟุตบอล']
+    return render_template('fav_sports.html',title=title,sports=sports)
+
+@app.route('/greeting/<username>')
+def greeting(username):
+    title = 'Welcome Page'
+    return render_template('welcome.html',title=title,username=username)

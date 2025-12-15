@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block title %}
+  {{title}}
+{% endblock %}
+
+{% block content %}
+  {% if username == 'Sirawit' %}
+      <h3>Hello, {{username}}</h3>
+  {% else %}
+      <h3>Hello, Guest</h3>
+  {% endif %}
+  
+{% endblock content%}
+
+
+  
